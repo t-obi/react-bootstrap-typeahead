@@ -171,7 +171,6 @@ const TypeaheadInput = React.createClass({
       hintText,
       initialItem,
       onAdd,
-      selected,
       value,
     } = this.props;
 

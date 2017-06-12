@@ -48,6 +48,8 @@ const TypeaheadInput = React.createClass({
      * Placeholder text for the input.
      */
     placeholder: PropTypes.string,
+
+    ariaLabel: PropTypes.string,
   },
 
   getInitialState() {
@@ -75,6 +77,7 @@ const TypeaheadInput = React.createClass({
       placeholder,
       selected,
       value,
+      ariaLabel,
     } = this.props;
 
     const inputProps = {
@@ -99,6 +102,7 @@ const TypeaheadInput = React.createClass({
         tabIndex={-1}>
         <TextInput
           {...inputProps}
+          ariaLabel={ariaLabel}
           autoComplete="off"
           className={cx('bootstrap-typeahead-input-main', {
             'has-selection': !!selected.length,
@@ -115,6 +119,7 @@ const TypeaheadInput = React.createClass({
           }}
         />
         <TextInput
+          ariaLabel={ariaLabel}
           bsSize={bsSize}
           className={cx('bootstrap-typeahead-input-hint')}
           hasAux={hasAux}

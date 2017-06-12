@@ -261,7 +261,6 @@ const Typeahead = React.createClass({
       dropup,
       labelKey,
       paginate,
-      ariaLabel,
     } = this.props;
     const {shownResults, text} = this.state;
 
@@ -283,7 +282,6 @@ const Typeahead = React.createClass({
 
     return (
       <div
-        aria-label={ariaLabel}
         className={cx('bootstrap-typeahead', 'clearfix', 'open', {
           'dropup': dropup,
         }, className)}
@@ -364,6 +362,7 @@ const Typeahead = React.createClass({
       name,
       placeholder,
       renderToken,
+      ariaLabel,
     } = this.props;
     const {activeIndex, activeItem, initialItem, selected, text} = this.state;
     const Input = multiple ? TokenizerInput : TypeaheadInput;
@@ -374,6 +373,7 @@ const Typeahead = React.createClass({
         {...inputProps}
         activeIndex={activeIndex}
         activeItem={activeItem}
+        ariaLabel={ariaLabel}
         hasAux={!!this._renderAux()}
         hintText={getHintText({
           activeItem,

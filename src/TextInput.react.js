@@ -9,14 +9,16 @@ const TextInput = React.createClass({
      * Specify the size of the input.
      */
     bsSize: PropTypes.oneOf(['large', 'lg', 'small', 'sm']),
+    ariaLabel: PropTypes.string,
   },
 
   render() {
-    const {bsSize, className, hasAux, ...otherProps} = this.props;
+    const {bsSize, className, hasAux, ariaLabel, ...otherProps} = this.props;
 
     return (
       <input
         {...otherProps}
+        aria-label={ariaLabel}
         className={cx('form-control', {
           'has-aux': hasAux,
           'input-lg': bsSize === 'large' || bsSize === 'lg',

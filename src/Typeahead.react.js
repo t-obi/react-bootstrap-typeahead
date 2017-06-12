@@ -283,7 +283,7 @@ const Typeahead = React.createClass({
 
     return (
       <div
-        ariaLabel={ariaLabel}
+        aria-label={ariaLabel}
         className={cx('bootstrap-typeahead', 'clearfix', 'open', {
           'dropup': dropup,
         }, className)}
